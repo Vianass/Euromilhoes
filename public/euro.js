@@ -36,7 +36,12 @@ function consomeChaveJSON(chavejson) {
 
 function gerachave(e) {
 
-    fetch('http://localhost:3000/euro')
+    fetch("https://euromilhoes-posn.onrender.com/euro", {
+    method: "GET", // ou "POST" se necessário
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
         .then((res => res.json()))
         .then((data) => {
             updatechave(data);

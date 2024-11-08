@@ -1,6 +1,7 @@
 {
   "name": "eurowinner",
   "version": "1.0.0",
+  "type":"module",
   "description": "gerador de chaves euromilhoes",
   "main": "app.js",
   "scripts": {

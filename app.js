@@ -1,8 +1,4 @@
-express = require('express');
 
-app = new express();
-
-app.use(express.static('./public'));
 
 function gerador(n, min, max) {
     aposta = new Set();
@@ -26,16 +22,27 @@ function gerachave() {
     return chave;
 }
 
-//app.get('/', function (req, res) {
-//    res.send('Gerador de chaves em /euro!');
-//});
 
 app.get('/euro', function (req, res) {
-    //res.setHeader('Content-Type', 'application/json');
     res.json(gerachave());
 });
 
 app.listen(3000, function () {
     console.log("app express listening port 3000");
 })
+
+const express = require('express');
+const app = express();
+const resourceRoutes = require('./routes/resourceRoutes'); 
+
+app.use(express.json()); 
+
+
+app.use('/api/resources', resourceRoutes);
+
+
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor a correr na porta ${PORT}`);
+});
 

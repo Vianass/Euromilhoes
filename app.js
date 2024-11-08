@@ -1,6 +1,9 @@
 
 import express from 'express';
-import resourceRoutes from './routes/resourceRoutes.js';
+import resourceRoutes from './routes/resourceRoutes.js'; 
+
+
+
 
 const app = express();
 const PORT = 3000;

@@ -32,6 +32,6 @@ async function handleDelete(id) {
     updateData(); 
 }
 
-// Carregar os dados na inicialização da aplicação
+
 document.addEventListener('DOMContentLoaded', updateData);
 

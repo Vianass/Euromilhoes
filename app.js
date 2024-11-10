@@ -1,5 +1,6 @@
 
 import express from 'express';
+import path from 'path';
 import resourceRoutes from './routes/resourceRoutes.js'; 
 
 
@@ -25,9 +26,13 @@ function gerachave() {
 }
 
 
-app.use(express.json());
-app.use(express.static('public')); 
 
+app.use(express.static('public')); 
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
+});
 
 app.get('/euro', (req, res) => {
     res.json(gerachave());
